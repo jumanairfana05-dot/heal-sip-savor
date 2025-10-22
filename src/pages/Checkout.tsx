@@ -133,7 +133,7 @@ const Checkout = () => {
                       </p>
                     </div>
                     <span className="font-semibold">
-                      ${(item.price * item.quantity).toFixed(2)}
+                      ₹{item.price * item.quantity}
                     </span>
                   </div>
                 ))}
@@ -142,18 +142,18 @@ const Checkout = () => {
               <div className="border-t border-border pt-4 space-y-2">
                 <div className="flex justify-between text-sm">
                   <span className="text-muted-foreground">Subtotal</span>
-                  <span className="font-semibold">${total.toFixed(2)}</span>
+                  <span className="font-semibold">₹{total}</span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-muted-foreground">Tax (8%)</span>
+                  <span className="text-muted-foreground">GST (18%)</span>
                   <span className="font-semibold">
-                    ${(total * 0.08).toFixed(2)}
+                    ₹{Math.round(total * 0.18)}
                   </span>
                 </div>
                 <div className="border-t border-border pt-2 flex justify-between text-lg font-semibold">
                   <span>Total</span>
                   <span className="text-primary">
-                    ${(total * 1.08).toFixed(2)}
+                    ₹{Math.round(total * 1.18)}
                   </span>
                 </div>
               </div>

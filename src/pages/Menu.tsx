@@ -2,9 +2,27 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
-import { ShoppingCart, Filter } from "lucide-react";
+import { ShoppingCart, Filter, Leaf, Cherry, Coffee, GlassWater, Palmtree, Flower2, UtensilsCrossed, Sandwich, Salad, Soup, Drumstick, Cookie, IceCreamCone, IceCream, CakeSlice } from "lucide-react";
 import { menuItems, MenuItem } from "@/data/menuData";
 import { useCart } from "@/contexts/CartContext";
+
+const iconMap: Record<string, React.ComponentType<any>> = {
+  Leaf,
+  Cherry,
+  Coffee,
+  GlassWater,
+  Palmtree,
+  Flower2,
+  UtensilsCrossed,
+  Sandwich,
+  Salad,
+  Soup,
+  Drumstick,
+  Cookie,
+  IceCreamCone,
+  IceCream,
+  CakeSlice,
+};
 
 const Menu = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
@@ -104,28 +122,30 @@ const Menu = () => {
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredItems.map((item, index) => (
-                <Card
-                  key={item.id}
-                  className="overflow-hidden hover:shadow-medium transition-smooth animate-scale-in"
-                  style={{ animationDelay: `${index * 0.05}s` }}
-                >
-                  {/* Placeholder for image */}
-                  <div className="h-48 bg-gradient-to-br from-sage-light to-secondary flex items-center justify-center">
-                    <span className="text-4xl font-display text-primary/30">
-                      {item.name.charAt(0)}
-                    </span>
-                  </div>
-
-                  <div className="p-6">
-                    <div className="flex items-start justify-between mb-2">
-                      <h3 className="text-xl font-display font-semibold">
-                        {item.name}
-                      </h3>
-                      <span className="text-lg font-semibold text-primary">
-                        ${item.price.toFixed(2)}
-                      </span>
+              {filteredItems.map((item, index) => {
+                const IconComponent = iconMap[item.icon];
+                return (
+                  <Card
+                    key={item.id}
+                    className="overflow-hidden hover:shadow-medium transition-smooth animate-scale-in"
+                    style={{ animationDelay: `${index * 0.05}s` }}
+                  >
+                    {/* Icon Header */}
+                    <div className="h-48 bg-gradient-to-br from-sage-light to-secondary flex items-center justify-center">
+                      {IconComponent && (
+                        <IconComponent className="w-20 h-20 text-primary/40" />
+                      )}
                     </div>
+
+                    <div className="p-6">
+                      <div className="flex items-start justify-between mb-2">
+                        <h3 className="text-xl font-display font-semibold">
+                          {item.name}
+                        </h3>
+                        <span className="text-lg font-semibold text-primary">
+                          ₹{item.price}
+                        </span>
+                      </div>
 
                     <p className="text-sm text-muted-foreground mb-4">
                       {item.description}
@@ -139,16 +159,17 @@ const Menu = () => {
                       ))}
                     </div>
 
-                    <Button
-                      className="w-full group"
-                      onClick={() => handleAddToCart(item)}
-                    >
-                      <ShoppingCart className="w-4 h-4 mr-2 group-hover:scale-110 transition-smooth" />
-                      Add to Cart
-                    </Button>
-                  </div>
-                </Card>
-              ))}
+                      <Button
+                        className="w-full group"
+                        onClick={() => handleAddToCart(item)}
+                      >
+                        <ShoppingCart className="w-4 h-4 mr-2 group-hover:scale-110 transition-smooth" />
+                        Add to Cart
+                      </Button>
+                    </div>
+                  </Card>
+                );
+              })}
             </div>
           )}
         </div>

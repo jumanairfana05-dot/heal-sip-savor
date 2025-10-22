@@ -18,33 +18,33 @@ interface Ingredient {
 
 const ingredients: Ingredient[] = [
   // Base
-  { id: "base-1", name: "Almond Milk", category: "base", calories: 30, price: 1.5 },
-  { id: "base-2", name: "Coconut Water", category: "base", calories: 45, price: 2.0 },
-  { id: "base-3", name: "Oat Milk", category: "base", calories: 120, price: 1.5 },
-  { id: "base-4", name: "Orange Juice", category: "base", calories: 110, price: 1.5 },
+  { id: "base-1", name: "Almond Milk", category: "base", calories: 30, price: 120 },
+  { id: "base-2", name: "Coconut Water", category: "base", calories: 45, price: 160 },
+  { id: "base-3", name: "Oat Milk", category: "base", calories: 120, price: 120 },
+  { id: "base-4", name: "Orange Juice", category: "base", calories: 110, price: 120 },
   
   // Fruits
-  { id: "fruit-1", name: "Banana", category: "fruits", calories: 105, price: 0.5 },
-  { id: "fruit-2", name: "Strawberries", category: "fruits", calories: 50, price: 1.0 },
-  { id: "fruit-3", name: "Mango", category: "fruits", calories: 100, price: 1.5 },
-  { id: "fruit-4", name: "Blueberries", category: "fruits", calories: 85, price: 1.5 },
-  { id: "fruit-5", name: "Pineapple", category: "fruits", calories: 80, price: 1.0 },
+  { id: "fruit-1", name: "Banana", category: "fruits", calories: 105, price: 40 },
+  { id: "fruit-2", name: "Strawberries", category: "fruits", calories: 50, price: 80 },
+  { id: "fruit-3", name: "Mango", category: "fruits", calories: 100, price: 120 },
+  { id: "fruit-4", name: "Blueberries", category: "fruits", calories: 85, price: 120 },
+  { id: "fruit-5", name: "Pineapple", category: "fruits", calories: 80, price: 80 },
   
   // Greens
-  { id: "green-1", name: "Spinach", category: "greens", calories: 7, price: 0.5 },
-  { id: "green-2", name: "Kale", category: "greens", calories: 33, price: 0.5 },
-  { id: "green-3", name: "Cucumber", category: "greens", calories: 16, price: 0.5 },
+  { id: "green-1", name: "Spinach", category: "greens", calories: 7, price: 40 },
+  { id: "green-2", name: "Kale", category: "greens", calories: 33, price: 40 },
+  { id: "green-3", name: "Cucumber", category: "greens", calories: 16, price: 40 },
   
   // Protein
-  { id: "protein-1", name: "Greek Yogurt", category: "protein", calories: 100, price: 2.0 },
-  { id: "protein-2", name: "Protein Powder", category: "protein", calories: 120, price: 2.5 },
-  { id: "protein-3", name: "Almond Butter", category: "protein", calories: 190, price: 1.5 },
+  { id: "protein-1", name: "Greek Yogurt", category: "protein", calories: 100, price: 160 },
+  { id: "protein-2", name: "Protein Powder", category: "protein", calories: 120, price: 200 },
+  { id: "protein-3", name: "Almond Butter", category: "protein", calories: 190, price: 120 },
   
   // Extras
-  { id: "extra-1", name: "Chia Seeds", category: "extras", calories: 60, price: 1.0 },
-  { id: "extra-2", name: "Hemp Seeds", category: "extras", calories: 55, price: 1.0 },
-  { id: "extra-3", name: "Honey", category: "extras", calories: 64, price: 0.5 },
-  { id: "extra-4", name: "Cacao Powder", category: "extras", calories: 20, price: 1.0 },
+  { id: "extra-1", name: "Chia Seeds", category: "extras", calories: 60, price: 80 },
+  { id: "extra-2", name: "Hemp Seeds", category: "extras", calories: 55, price: 80 },
+  { id: "extra-3", name: "Honey", category: "extras", calories: 64, price: 40 },
+  { id: "extra-4", name: "Cacao Powder", category: "extras", calories: 20, price: 80 },
 ];
 
 const RecipeBuilder = () => {
@@ -144,7 +144,7 @@ const RecipeBuilder = () => {
                                     {ingredient.calories} cal
                                   </Badge>
                                   <Badge variant="outline" className="text-xs">
-                                    +${ingredient.price.toFixed(2)}
+                                    +₹{ingredient.price}
                                   </Badge>
                                 </div>
                               </div>
@@ -213,7 +213,7 @@ const RecipeBuilder = () => {
                         <div className="flex justify-between text-lg font-semibold pt-2 border-t border-border">
                           <span>Total Price</span>
                           <span className="text-primary">
-                            ${totalPrice.toFixed(2)}
+                            ₹{totalPrice}
                           </span>
                         </div>
                       </div>
