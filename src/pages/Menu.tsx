@@ -130,10 +130,20 @@ const Menu = () => {
                     className="overflow-hidden hover:shadow-medium transition-smooth animate-scale-in"
                     style={{ animationDelay: `${index * 0.05}s` }}
                   >
-                    {/* Icon Header */}
-                    <div className="h-48 bg-gradient-to-br from-sage-light to-secondary flex items-center justify-center">
-                      {IconComponent && (
-                        <IconComponent className="w-20 h-20 text-primary/40" />
+                    {/* Image Header */}
+                    <div className="h-48 overflow-hidden bg-gradient-to-br from-sage-light to-secondary">
+                      {item.image ? (
+                        <img 
+                          src={item.image} 
+                          alt={item.name}
+                          className="w-full h-full object-cover hover:scale-105 transition-smooth"
+                        />
+                      ) : (
+                        IconComponent && (
+                          <div className="w-full h-full flex items-center justify-center">
+                            <IconComponent className="w-20 h-20 text-primary/40" />
+                          </div>
+                        )
                       )}
                     </div>
 
