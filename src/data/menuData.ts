@@ -1,3 +1,19 @@
+import greenGoddessImage from "@/assets/menu/green-goddess-smoothie.jpg";
+import berryBlissImage from "@/assets/menu/berry-bliss.jpg";
+import goldenTurmericImage from "@/assets/menu/golden-turmeric-latte.jpg";
+import matchaMagicImage from "@/assets/menu/matcha-magic.jpg";
+import tropicalParadiseImage from "@/assets/menu/tropical-paradise.jpg";
+import herbalTeaImage from "@/assets/menu/herbal-healing-tea.jpg";
+import buddhaBowlImage from "@/assets/menu/buddha-bowl.jpg";
+import avocadoToastImage from "@/assets/menu/avocado-toast.jpg";
+import harvestSaladImage from "@/assets/menu/harvest-salad.jpg";
+import wellnessWrapImage from "@/assets/menu/wellness-wrap.jpg";
+import proteinBowlImage from "@/assets/menu/protein-power-bowl.jpg";
+import cacaoBlissImage from "@/assets/menu/cacao-bliss-balls.jpg";
+import chiaPuddingImage from "@/assets/menu/chia-pudding-parfait.jpg";
+import niceCreamImage from "@/assets/menu/banana-nice-cream.jpg";
+import lemonTartImage from "@/assets/menu/lemon-lavender-tart.jpg";
+
 export interface MenuItem {
   id: string;
   name: string;
@@ -19,6 +35,7 @@ export const menuItems: MenuItem[] = [
     category: "drinks",
     tags: ["vegan", "gluten-free", "organic"],
     icon: "Leaf",
+    image: greenGoddessImage,
   },
   {
     id: "drink-2",
@@ -28,6 +45,7 @@ export const menuItems: MenuItem[] = [
     category: "drinks",
     tags: ["gluten-free", "organic"],
     icon: "Cherry",
+    image: berryBlissImage,
   },
   {
     id: "drink-3",
@@ -37,6 +55,7 @@ export const menuItems: MenuItem[] = [
     category: "drinks",
     tags: ["vegan", "gluten-free", "organic"],
     icon: "Coffee",
+    image: goldenTurmericImage,
   },
   {
     id: "drink-4",
@@ -46,6 +65,7 @@ export const menuItems: MenuItem[] = [
     category: "drinks",
     tags: ["vegan", "gluten-free", "organic"],
     icon: "GlassWater",
+    image: matchaMagicImage,
   },
   {
     id: "drink-5",
@@ -55,6 +75,7 @@ export const menuItems: MenuItem[] = [
     category: "drinks",
     tags: ["vegan", "gluten-free", "organic"],
     icon: "Palmtree",
+    image: tropicalParadiseImage,
   },
   {
     id: "drink-6",
@@ -64,6 +85,7 @@ export const menuItems: MenuItem[] = [
     category: "drinks",
     tags: ["gluten-free", "organic"],
     icon: "Flower2",
+    image: herbalTeaImage,
   },
 
   // Meals
@@ -75,6 +97,7 @@ export const menuItems: MenuItem[] = [
     category: "meals",
     tags: ["vegan", "gluten-free", "organic"],
     icon: "UtensilsCrossed",
+    image: buddhaBowlImage,
   },
   {
     id: "meal-2",
@@ -84,6 +107,7 @@ export const menuItems: MenuItem[] = [
     category: "meals",
     tags: ["vegan", "organic"],
     icon: "Sandwich",
+    image: avocadoToastImage,
   },
   {
     id: "meal-3",
@@ -93,6 +117,7 @@ export const menuItems: MenuItem[] = [
     category: "meals",
     tags: ["gluten-free", "organic"],
     icon: "Salad",
+    image: harvestSaladImage,
   },
   {
     id: "meal-4",
@@ -102,6 +127,7 @@ export const menuItems: MenuItem[] = [
     category: "meals",
     tags: ["vegan", "organic"],
     icon: "Soup",
+    image: wellnessWrapImage,
   },
   {
     id: "meal-5",
@@ -111,6 +137,7 @@ export const menuItems: MenuItem[] = [
     category: "meals",
     tags: ["gluten-free", "organic"],
     icon: "Drumstick",
+    image: proteinBowlImage,
   },
 
   // Desserts
@@ -122,6 +149,7 @@ export const menuItems: MenuItem[] = [
     category: "desserts",
     tags: ["vegan", "gluten-free", "organic"],
     icon: "Cookie",
+    image: cacaoBlissImage,
   },
   {
     id: "dessert-2",
@@ -131,6 +159,7 @@ export const menuItems: MenuItem[] = [
     category: "desserts",
     tags: ["vegan", "gluten-free", "organic"],
     icon: "IceCreamCone",
+    image: chiaPuddingImage,
   },
   {
     id: "dessert-3",
@@ -140,6 +169,7 @@ export const menuItems: MenuItem[] = [
     category: "desserts",
     tags: ["vegan", "gluten-free", "organic"],
     icon: "IceCream",
+    image: niceCreamImage,
   },
   {
     id: "dessert-4",
@@ -149,5 +179,6 @@ export const menuItems: MenuItem[] = [
     category: "desserts",
     tags: ["vegan", "gluten-free", "organic"],
     icon: "CakeSlice",
+    image: lemonTartImage,
   },
 ];
