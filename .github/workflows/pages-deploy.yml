@@ -33,7 +33,8 @@ jobs:
         id: deployment
 
       - name: Output page URL
-        run: echo "Page URL: ${{ steps.deployment.outputs.page_url }}"
+        run: echo Page URL: ${{ steps.deployment.outputs.page_url }}
+
 
 
 
