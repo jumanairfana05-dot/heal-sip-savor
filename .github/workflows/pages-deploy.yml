@@ -1,0 +1,39 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # or whatever your default branch is
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v4
+
+      - name: Build the site
+        run: |
+          npm install
+          npm run build
+        working-directory: .  # or change if your code lives in a subfolder
+
+      - name: Upload production assets
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./public  # <-- change this to your build output folder
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
+        id: deployment
+        with:
+          # defaults are fine without extra inputs
+
+      - name: Output page URL
+        run: echo "Page URL: ${{ steps.deployment.outputs.page_url }}"
